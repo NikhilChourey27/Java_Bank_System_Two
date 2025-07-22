@@ -12,7 +12,7 @@ public class TestConnection {
             conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/bankmanagementSystem?useSSL=false&serverTimezone=UTC",
                 "root",
-                "Neekhilchourey@123"
+                "12345678"
             );
             statement = conn.createStatement();
             System.out.println("Connected successfully!");
