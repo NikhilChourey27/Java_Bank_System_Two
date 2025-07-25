@@ -117,7 +117,7 @@ l12.setBounds(700,20,150,30);
 add(l12);
 
 
-JLabel l13= new JLabel();
+JLabel l13= new JLabel(formno);
 l13.setFont(new Font("Raleway",Font.BOLD,18));
 l13.setBounds(760,20,150,30);
 add(l13);
@@ -192,6 +192,7 @@ add(cancelButton);
           con.statement.executeUpdate(q1);
           con.statement.executeUpdate(q2);
           JOptionPane.showMessageDialog(null, "Card Number : "+cardno+"\n Pin  : "+pin );
+          new Deposit(pin);
           setVisible(false);
 
         }

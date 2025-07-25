@@ -1,6 +1,7 @@
 package bank_management_system;
 
 import java.io.File;
+import java.sql.ResultSet;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -73,7 +74,7 @@ button1.setBackground(Color.BLACK);
 button1.setBounds(300,300,100,30);
 button1.addActionListener(this);
 add(button1);
-
+ 
 
 button2 = new JButton("CLEAR");
 button2.setFont(new Font("Arial", Font.BOLD, 14));
@@ -116,6 +117,20 @@ add(button3);
      try{
       if(e.getSource()==button1)
       {
+          TestConnection con = new TestConnection();
+          String cardno = textField2.getText();
+          String  pin = passwordField3.getText();
+          String q = "select * from login where card_number = '"+cardno+"' and pin = '"+pin+"'";
+          ResultSet resultSet = con.statement.executeQuery(q);
+          if (resultSet.next()) {
+            setVisible(false);
+            new Transaction(pin);
+          }else{
+            JOptionPane.showMessageDialog(null, "Incorrect Card Number or PIN");
+          }
+
+
+
 
       }else if(e.getSource()==button2){
         
@@ -123,7 +138,8 @@ add(button3);
         passwordField3.setText("");
 
       }else if(e.getSource()==button3){
- 
+         new Signup();
+         setVisible(false);
       }
      } 
      catch(Exception E){

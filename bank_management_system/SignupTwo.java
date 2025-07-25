@@ -19,7 +19,7 @@ public class SignupTwo extends JFrame implements ActionListener {
     JTextField textPan , textAdhar;
     JButton next;
     String formno;
-    SignupTwo(String first){
+    SignupTwo(String formno){
         super("APPLICATION FORM");
 
     ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("bank_management_system/icon/bank.png"));
@@ -124,15 +124,15 @@ add(textAdhar);
 
 
 
-JLabel l9= new JLabel(" Form No : ");
-l9.setFont(new Font("Raleway",Font.BOLD,18));
+JLabel l9= new JLabel("Form No: ");
+l9.setFont(new Font("Raleway",Font.BOLD,14));
 l9.setBounds(700,20,150,30);
 add(l9);
 
 
 JLabel l10= new JLabel(formno);
-l10.setFont(new Font("Raleway",Font.BOLD,18));
-l10.setBounds(760,20,150,30);
+l10.setFont(new Font("Raleway",Font.BOLD,14));
+l10.setBounds(763,20,150,30);
 add(l10);
 
 next = new JButton("Next");
